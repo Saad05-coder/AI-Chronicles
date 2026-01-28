@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Access Terminal</title>
+    <script src="../js/main.js" defer></script>
+    <link rel="stylesheet" href="../css/AI_intro.css"> 
+</head>
+<body id="login-body">
+    <header>
+        <h1>&#91;SYSTEM INITIATED&#93;</h1>
+        <h2>Awaiting Authorization Key...</h2>
+    </header>
+
+    <!-- Added ID for JavaScript -->
+    <form id="loginForm" action="2.html" method="post" class="terminal-form" novalidate> <!--ask-->
+        <p>User Credentials Required.</p>
+        
+        <div class="input-group">
+            <label for="fullName">&gt; USER_NAME:</label>
+            <input name="full_name" type="text" id="fullName" placeholder="Saad Al-Shargabi">
+        </div>
+
+        <div class="input-group">
+            <label for="email">&gt; EMAIL:</label>
+            <input name="contact_email" type="email" id="email" placeholder="user@example.com">
+        </div>
+        
+        <div class="button-group">
+            <input type="submit" value="&#91;RUN&#93; Login"><!--ask-->
+        </div>
+    </form>
+    
+    <nav>
+        <p>Or bypass sequence:</p>
+        <a href="2.html" class="bypass-link">&#91;SKIP&#93;<!--ask--> Access Database Directly</a>
+    </nav>
+
+
+</body>
+</html>
