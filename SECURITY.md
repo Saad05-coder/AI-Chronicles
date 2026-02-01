@@ -1,47 +1,28 @@
-# Security Policy
+# Security Policy for AI Chronicles
 
-Thank you for your interest in the security of the C++ School Management System. We take the security of our application seriously and appreciate the efforts of developers and students who help us ensure the integrity of this project.
+This project is a **front-end educational demonstration** designed to simulate an "AI Access Terminal." It runs entirely in the browser (Client-Side) and relies on HTML, CSS, and JavaScript.
 
 ## 📝 Supported Versions
 
-Since this is an academic/portfolio project, we currently only support the latest version of the code present in the `main` branch.
-
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| 1.0     | :white_check_mark: |
 
-## 🐞 Reporting a Vulnerability
+## 🛡️ Scope & Expected Behavior (Please Read)
 
-If you discover a security vulnerability or a logic error (e.g., a way to bypass the login or crash the system via input), please follow these steps:
+Because this is a **UI Simulation**, the following behaviors are **intentional** and are **NOT** considered security vulnerabilities:
 
-1.  **Do not open a public issue.** This prevents malicious use of the vulnerability while we fix it.
-2.  Email the project maintainer at: **[mr.saadmuath05@gmail.com]**
-3.  In the email, please include:
-    *   A description of the vulnerability.
-    *   Steps to reproduce the issue (e.g., "Login as Admin, enter 'ABC' into the phone field...").
-    *   Screenshots if applicable.
+1.  **Login Bypass:** The login terminal (`1.html`) is a cosmetic interface. Navigating directly to `2.html` via the URL bar or the "Skip" link is the intended behavior. There is no backend authentication database.
+2.  **Client-Side Validation:** The form validation relies on HTML5 and JavaScript. It is designed for User Experience (UX), not data security.
+3.  **No Data Storage:** The contact form is a frontend modal (Bootstrap). It does not currently send data to a server or store personal information (PII).
 
-We will acknowledge your email within **48 hours** and aim to provide a fix within **7 days**.
+## 🐞 Reporting a Real Vulnerability
 
-## 🛡️ Security Features Implemented
+If you find a genuine issue, such as:
+*   **Cross-Site Scripting (XSS):** If inputting scripts into the simulated terminal causes code execution.
+*   **Malicious Dependencies:** If a linked library (like WOWSlider or Bootstrap) has a known vulnerability.
 
-This project follows specific C++ procedural programming security practices:
-
-*   **Input Validation:** Strict validation ensures that usernames cannot contain special characters and phone numbers must adhere to specific Yemeni prefixes (71, 73, 77, 78).
-*   **Fail-Safe Input Handling:** The system utilizes `cin.clear()` and `cin.ignore()` to prevent infinite loops and crash states caused by invalid data types (e.g., entering text into an integer field).
-*   **Role-Based Access Control (RBAC):** Distinct menus and permissions for **Admins** and **Employees**. Admins cannot be created by unauthorized users.
-*   **Data Integrity:** File handling logic checks for file existence and open states (`is_open()`) before attempting read/write operations to prevent data corruption.
+Please report it via email to: **mr.saadmuath05@gmail.com**
 
 ## ⚠️ Known Limitations
-
-As this is an educational project designed to demonstrate C++ logic without external libraries:
-
-*   **Data Storage:** User credentials and student records are stored in `.txt` files. In a real-world production environment, these would be encrypted or hashed.
-*   **Local Access:** The security model assumes the user has execution rights but does not manually modify the text files outside the application.
-
-## 🚫 Out of Scope
-
-The following are considered out of scope for security reports:
-*   Physical access to the machine hosting the `.txt` files.
-*   Modification of the source code by the user.
+This site is static. All logic is visible in the source code (`View Source`). Do not use this code as a template for securing sensitive data.
